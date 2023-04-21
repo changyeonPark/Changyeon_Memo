@@ -1,21 +1,32 @@
 package changyeon.submit12;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Board {
 	
+
 	
 	private int num; 			// 글 번호
 	private String title;		// 글 제목
 	private String date;		// 글 게시일
 	private String content;		// 글 내용
 	
-	public Board() {}
-	
-	static Board instance = new Board();
-	
-	public static Board getInstance() {
-		return instance;
+	public Board() {
+		
+		
 	}
 	
+	public Board(String title, String content) {
+		BoardDB boardDB = BoardDB.getInstance();
+		System.out.println(boardDB);
+		this.num = boardDB.makeNum();
+		this.title = title;
+		this.date = boardDB.makeDate();
+//		Date currentTime = new Date();
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+		this.content = content;
+	}
 	
 	public Board(int num, String title, String date, String content) {
 		super();
@@ -27,7 +38,7 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return "Board [num=" + num + ", title=" + title + ", date=" + date + ", content=" + content + "]";
+		return "[" + num + ". " + "| " + title + " | " + date + " | " + content + "]";
 	}
 
 	public int getNum() {
@@ -61,7 +72,5 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	
 	
 }

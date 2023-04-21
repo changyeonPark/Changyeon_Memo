@@ -115,7 +115,7 @@ public class ApiDateMain {
 		
 		// strTomorrow 문자열의 날짜 포맷에 대한 sdf 생성
 		sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		
+		System.out.println("\n=================1===========================\n");
 		Date dateTomorrow = sdf.parse(strTomorrow);
 		System.out.println(dateTomorrow);
 		System.out.println(sdf.format(dateTomorrow));
@@ -149,7 +149,7 @@ public class ApiDateMain {
 		// Date 타입에서 long 날짜 얻기
 		System.out.println(temp.getTime());
 		
-		System.out.println("\n============================================\n");
+		System.out.println("\n====================123========================\n");
 		
 		// 날짜 꺼내기
 		// Calendar 객체가 편하다.
@@ -186,6 +186,7 @@ public class ApiDateMain {
 		String oneDay = "2023.04.06 12:22:44";
 		String toDay = "2023.06.22 14:31:13";
 		
+		System.out.println("\n===================2====================\n");
 		// Date타입으로 바꿔주기
 		sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 		Date oneDate = sdf.parse(oneDay);
